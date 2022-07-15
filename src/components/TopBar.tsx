@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Indicator } from './Indicator';
+
 
 export const TopBar = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    </form>
+                    <div className="d-flex">
+                       <Indicator /> 
+                    </div>
                 </div>
             </nav>
         </>
