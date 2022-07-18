@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 import axios from 'axios';
-import { SelectorYears } from './SelectorYears';
+import { selectorIndicator } from '../helpers/types';
 
 
-export const Indicator = () => {
+export const Indicator: FC<selectorIndicator> = ({ handleIndicator }) => {
 
     const [data, setData] = useState([] as any);
-    const [indicatorSelect, setIndicatorSelect] = useState('');
-    const [monthSelect, setMonthSelect] = useState('');
-    //console.log(indicatorSelect);
-    //console.log(data);
-
 
     useEffect(() => {
         getIndicator();
@@ -28,22 +23,14 @@ export const Indicator = () => {
 
     return (
         <>
-            <select className="form-select" aria-label="Default select example" onChange={(e) => setIndicatorSelect(e.target.value)}>
+            <label>Indicador</label>
+            <select className="form-select" aria-label="Default select example" onChange={(e) => handleIndicator(e.target.value)}>
                 <option key='0' value='0'>Seleccione...</option>
                 {
                     Object.values(data).map((item: any, index: number) => {
                         return <option key={index} value={item.codigo}> {item.nombre} </option>
                     })
                 }
-            </select>
-
-            <SelectorYears 
-            indicador={indicatorSelect}
-            />
-
-            <select className="form-select" aria-label="Default select example">
-                <option key='0' value='0'>Seleccione...</option>
-
             </select>
         </>
     )
