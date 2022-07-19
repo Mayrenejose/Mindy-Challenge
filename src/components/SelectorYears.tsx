@@ -71,7 +71,7 @@ export const SelectorYears: FC<selectorYears_> = ({ indicador, handleYears }) =>
 
     return (
         <>
-        <label>Año</label>
+        <label className="form-label">Año</label>
             <select className="form-select" aria-label="Default select example" onChange={(e) => handleYears(e.target.value)}>
                 <option key='0' value='0'>Seleccione...</option>
                 {

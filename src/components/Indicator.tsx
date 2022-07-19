@@ -23,7 +23,7 @@ export const Indicator: FC<selectorIndicator> = ({ handleIndicator }) => {
 
     return (
         <>
-            <label>Indicador</label>
+            <label className="form-label">Indicador</label>
             <select className="form-select" aria-label="Default select example" onChange={(e) => handleIndicator(e.target.value)}>
                 <option key='0' value='0'>Seleccione...</option>
                 {

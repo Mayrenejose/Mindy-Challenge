@@ -9,10 +9,8 @@ export const Grafic: FC<grafic_> = ({ indicador, yearSelect, monthSelect }) => {
 
     const [getData, setgetData] = useState([] as any);
     const [getSerie, setgetSerie] = useState([] as any);
-    const [date, setDate] = useState('');
-    //console.log(date);
-    //console.log(getSerie);
-
+    const [date, setDate] = useState([] as any);
+    const [worth, setWorth] = useState([] as any);
 
     useEffect(() => {
         getDataGrafic();
@@ -28,39 +26,39 @@ export const Grafic: FC<grafic_> = ({ indicador, yearSelect, monthSelect }) => {
                 setgetSerie(response.data.serie)
             }).catch(console.log)
     }
-
+    //Funcion que mapea la data para pasarlo a los state y cambia el formato de la fecha
     const transformDate = () => {
+        let datesFull = [] as any;
+        setDate(datesFull);
+
+        let worthFull = [] as any;
+        setWorth(worthFull);
+
         getSerie.map((item: any, index: any) => {
-            let fecha = moment(item.fecha).format("DD-MM-YYYY");
-            setDate(fecha)
+            let fecha = moment(item.fecha).format("MMMM D , YYYY");
+            datesFull.push(fecha);
+
+            worthFull.push(item.valor);
         })
     }
 
-    const filterDate = (yearSelect: string, monthSelect: string) => {
-        console.log(yearSelect, monthSelect);
-
-    }
-
-
     useEffect(() => {
         transformDate();
-        filterDate(yearSelect, monthSelect);
     }, [getSerie])
 
     return (
-        <div>
+        <div className='d-flex justify-content-center'>
             <Plot
                 data={[
                     {
-                        x: [1, 2, 3],
-                        y: [2, 6, 3],
+                        x: [...date],
+                        y: [...worth],
                         type: 'scatter',
-                        mode: 'lines+markers',
+                        mode: 'lines',
                         marker: { color: 'red' },
                     },
-                    //{ type: 'bar', x: [1, 2, 3], y: [2, 5, 3] },
                 ]}
-                layout={{ width: 320, height: 240, title: getData.nombre, yaxis: { title: 'Valor en ' + getData.unidad_medida } }}
+                layout={{ width: 700, height: 500, title: getData.nombre + ' de ' + monthSelect + ' de ' + yearSelect,  yaxis: { title: 'Valor en ' + getData.unidad_medida } }}
             />
         </div>
     )
