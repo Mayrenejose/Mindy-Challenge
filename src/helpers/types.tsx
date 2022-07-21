@@ -15,7 +15,6 @@ export type selectorMonth_ = {
 export type grafic_ = {
   indicador: string,
   yearSelect:string,
-  monthSelect:string
-
+  monthSelect:string,
 }
 

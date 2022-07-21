@@ -15,8 +15,7 @@ export const App = () => {
   const [monthSelect, setMontSelect] = useState('');
   const handleMonth = (val: any) => { setMontSelect(val) };
 
-
-  return (
+   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
@@ -46,12 +45,12 @@ export const App = () => {
         </div>
       </nav>
 
-      <div>
+      <div>        
         <Grafic
           indicador={indicatorSelect}
           yearSelect={yearSelect}
           monthSelect={monthSelect}
-        />
+        /> 
       </div>
     </>
   )

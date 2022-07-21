@@ -27,7 +27,7 @@ export const Indicator: FC<selectorIndicator> = ({ handleIndicator }) => {
             <select className="form-select" aria-label="Default select example" onChange={(e) => handleIndicator(e.target.value)}>
                 <option key='0' value='0'>Seleccione...</option>
                 {
-                    Object.values(data).map((item: any, index: number) => {
+                    Object.values(data).map((item: any, index: number) => { 
                         return <option key={index} value={item.codigo}> {item.nombre} </option>
                     })
                 }
