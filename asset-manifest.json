@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Mindy-Challenge/static/css/main.17f34fae.css",
+    "main.js": "/Mindy-Challenge/static/js/main.717e62a1.js",
+    "index.html": "/Mindy-Challenge/index.html",
+    "main.17f34fae.css.map": "/Mindy-Challenge/static/css/main.17f34fae.css.map",
+    "main.717e62a1.js.map": "/Mindy-Challenge/static/js/main.717e62a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17f34fae.css",
+    "static/js/main.717e62a1.js"
+  ]
+}
