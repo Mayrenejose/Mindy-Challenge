@@ -23,15 +23,19 @@ export const SelectorMonth: FC<selectorMonth_> = ({ handleMonth, indicador }) =>
     useEffect(() => {       
         if (indicador === 'tasa_desempleo') {
             setDisable(true);
+            handleMonth('');
         }
         else if (indicador === 'imacec') {
             setDisable(true);
+            handleMonth('');
         }
         else if (indicador === 'ipc') {
             setDisable(true);
+            handleMonth('');
         }
         else if (indicador === 'utm') {
             setDisable(true);
+            handleMonth('');
         } else { setDisable(false) }
 
     }, [indicador])
