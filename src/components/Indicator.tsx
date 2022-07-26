@@ -9,6 +9,7 @@ export const Indicator: FC<selectorIndicator> = ({ handleIndicator }) => {
 
     useEffect(() => {
         getIndicator();
+        prueba();
     }, [])
 
     const getIndicator = () => {
@@ -19,6 +20,14 @@ export const Indicator: FC<selectorIndicator> = ({ handleIndicator }) => {
             .then((response) => {
                 setData(response.data);
             }).catch(console.log)
+    }
+
+    const prueba = () =>{
+        Object.values(data).filter((iten: any)=>{
+            if(iten === '1.7.0') {
+                console.log(iten);                
+            }            
+        })
     }
 
     return (
