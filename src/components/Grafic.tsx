@@ -12,12 +12,7 @@ export const Grafic: FC<grafic_> = ({ indicador, yearSelect, monthSelect }) => {
     const [date, setDate] = useState([] as any);
     const [worth, setWorth] = useState([] as any);
     const [loander, setLoander] = useState(false);
-    //console.log(date);
-    //console.log(monthSelect);
-
-    /* const prueba = date[0].slice(5,7)
-    console.log(prueba); */
-
+   
     useEffect(() => {
         if (indicador === 'tasa_desempleo') {
             getDataGrafic();
